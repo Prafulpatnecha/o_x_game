@@ -28,7 +28,11 @@ https://github.com/Prafulpatnecha/o_x_game/assets/144161200/1ed523b5-8247-4ce3-b
 <hr>
 <p>
 <a href ="">
-<img src="" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_095846.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_095755.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_095943.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_100019.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_100048.png" width="22%" Height="35%">
 </a>
 </p>
 <hr>
