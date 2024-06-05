@@ -18,5 +18,21 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-https://github.com/Prafulpatnecha/o_x_game/assets/144161200/446d1738-ab5e-47af-ab7a-7a1758e836b7
+//https://github.com/Prafulpatnecha/o_x_game/assets/144161200/446d1738-ab5e-47af-ab7a-7a1758e836b7
 
+
+https://github.com/Prafulpatnecha/o_x_game/assets/144161200/1ed523b5-8247-4ce3-bca8-b2b74d0b7a63
+
+
+<h2>➡️ </h2>
+<hr>
+<p>
+<a href ="">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_095846.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_095755.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_095943.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_100019.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/o_x_game/blob/master/Screenshot_20240605_100048.png" width="22%" Height="35%">
+</a>
+</p>
+<hr>
