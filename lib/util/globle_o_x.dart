@@ -15,3 +15,4 @@ int colorIndexUnder=colorListFile.length-1;
 
 File? fileImage;
 ImagePicker imagePicker=ImagePicker();
+String findOX=O;

@@ -121,7 +121,7 @@ class _GamePlayState extends State<GamePlay> {
               const SizedBox(
                 height: 50,
               ),
-              (colorIndexUnder==colorIndex)?const Text('Mind Game Get Started',style: TextStyle(color: Colors.red,fontSize: 30),):Container(),
+              (colorIndexUnder==colorIndex)?Text('Mind Game Get Started $findOX',style: const TextStyle(color: Colors.red,fontSize: 30),):Container(),
               const SizedBox(
                 height: 40,
               ),
@@ -156,10 +156,12 @@ class _GamePlayState extends State<GamePlay> {
                               if(boolck==true)
                               {
                                 xo();
+                                findOX=O;
                               }
                               else
                               {
                                 ox();
+                                findOX=X;
                               }
                             });
                             fullchecking();
