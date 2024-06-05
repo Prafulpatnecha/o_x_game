@@ -89,6 +89,16 @@ class _GamePlayState extends State<GamePlay> {
                           O=controllerO.text;
                           X=controllerX.text;
                           autoOX=controllerAuto.text;
+                          if(boolck==true)
+                          {
+                            // xo();
+                            findOX=O;
+                          }
+                          else
+                          {
+                            // ox();
+                            findOX=X;
+                          }
                           Navigator.of(context).pop();
                         }
                       else{
