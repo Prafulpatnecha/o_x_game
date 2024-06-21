@@ -24,7 +24,7 @@ samples, guidance on mobile development, and a full API reference.
 https://github.com/Prafulpatnecha/o_x_game/assets/144161200/1ed523b5-8247-4ce3-bca8-b2b74d0b7a63
 
 
-<h2>➡️ </h2>
+<h2>➡️Tic-tac-toe Game </h2>
 <hr>
 <p>
 <a href ="">
