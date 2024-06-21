@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:o_x_game/util/image.dart';
 
+import '../stone_paper_sizer/home/stone_play.dart';
 import 'gameplay/gamest.dart';
 
 class MyOX extends StatelessWidget {
@@ -14,6 +15,7 @@ class MyOX extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(),
         '/play':(context) => const GamePlay(),
+        '/play2':(context) => const StonePlay(),
       },
     );
   }
