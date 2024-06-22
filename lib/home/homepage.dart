@@ -73,6 +73,27 @@ class _HomePageState extends State<HomePage> {
               child: Image(image: play,),
             ),
           ),
+          SizedBox(height: 30,),
+          Container(
+            height: 80,
+            width: 170,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.blue),
+              borderRadius: BorderRadius.circular(40),
+              // gradient: LinearGradient(
+              //   colors: [
+              //     Colors.deepPurpleAccent,
+              //     Colors.green,
+              //   ]
+              // ),
+            ),
+            child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/play2');
+              },
+              child: Image(image: play,),
+            ),
+          ),
         ],
       ),
     );

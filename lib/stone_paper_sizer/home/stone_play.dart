@@ -11,7 +11,11 @@ class _StonePlayState extends State<StonePlay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: ,
+      appBar: AppBar(
+        title: const Text('Selecting details'),
+      ),
+      // body: ,  
     );
   }
 }
+// haxm
