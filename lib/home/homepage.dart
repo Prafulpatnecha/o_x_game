@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:o_x_game/util/image.dart';
 
+import '../stone_paper_sizer/home/startscreen/startedgame.dart';
 import '../stone_paper_sizer/home/stone_play.dart';
+import '../util/stone_modal.dart';
 import 'gameplay/gamest.dart';
 
 class MyOX extends StatelessWidget {
@@ -16,6 +18,7 @@ class MyOX extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/play':(context) => const GamePlay(),
         '/play2':(context) => const StonePlay(),
+        '/start':(context) => const StoneStart(),
       },
     );
   }
@@ -31,6 +34,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    stoneModal=StoneModal.toList(listModal: allListImage);
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: const Color(0xff12154a),
@@ -91,7 +95,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/play2');
               },
-              child: Image(image: play,),
+              child: Image(image: stoneModal!.listImage[2].imageFind!,),
             ),
           ),
         ],
