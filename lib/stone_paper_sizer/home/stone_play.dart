@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:o_x_game/stone_paper_sizer/utils/stone_globle.dart';
 import 'package:o_x_game/util/stone_modal.dart';
