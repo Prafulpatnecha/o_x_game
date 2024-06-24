@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:o_x_game/stone_paper_sizer/utils/stone_globle.dart';
 import 'package:o_x_game/util/stone_modal.dart';
@@ -49,6 +50,8 @@ class _StonePlayState extends State<StonePlay> {
                         ),
                       ),
                     ),
+                    (index==3)?const SizedBox(height: 20,):Container(),
+                    (index==3)?textFindController(stoneControllerFind: textUserName):Container(),
                   ],
                 ),
               ),
@@ -61,13 +64,13 @@ class _StonePlayState extends State<StonePlay> {
           setState(() {
             emptyStone.clear();
             if (selectIndexStone == 0) {
-              emptyStone.add(simpleImage);
+              emptyStone.addAll(simpleImage);
             } else if (selectIndexStone == 1) {
-              emptyStone.add(hardImage);
+              emptyStone.addAll(hardImage);
             } else if (selectIndexStone == 2) {
-              emptyStone.add(miciImage);
+              emptyStone.addAll(miciImage);
             } else if (selectIndexStone == 3) {
-              emptyStone.add(funnyImage);
+              emptyStone.addAll(funnyImage);
             }
           });
           Navigator.of(context).pushNamed('/start');
@@ -75,6 +78,18 @@ class _StonePlayState extends State<StonePlay> {
         child: Icon(Icons.play_arrow),
       ),
     );
+  }
+
+  TextFormField textFindController({required TextEditingController stoneControllerFind}) {
+    return TextFormField(
+      controller: stoneControllerFind,
+                    decoration: InputDecoration(
+                      label: Text('Enter User Name'),
+                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+                    ),
+                  );
   }
 }
 // haxm
