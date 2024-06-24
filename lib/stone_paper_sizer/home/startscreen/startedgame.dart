@@ -1,7 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:o_x_game/stone_paper_sizer/utils/funtion_stone.dart';
 import 'package:o_x_game/stone_paper_sizer/utils/stone_globle.dart';
 import 'package:o_x_game/util/stone_modal.dart';
+
 StoneModal? stoneModalList;
+
 class StoneStart extends StatefulWidget {
   const StoneStart({super.key});
 
@@ -12,7 +17,7 @@ class StoneStart extends StatefulWidget {
 class _StoneStartState extends State<StoneStart> {
   @override
   Widget build(BuildContext context) {
-    stoneModalList=StoneModal.toList(listModal: emptyStone);
+    stoneModalList = StoneModal.toList(listModal: emptyStone);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -44,80 +49,162 @@ class _StoneStartState extends State<StoneStart> {
                   ),
                 ),
               ),
-              SizedBox(height: height/8,),
+              SizedBox(
+                height: height / 8,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     children: [
-                      const Text('API',style: TextStyle(fontSize: 30),),
-                      const Text('Point',style: TextStyle(fontSize: 20),),//todo enter points auto
+                      const Text(
+                        'API',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                      Text(
+                        apiPoint.toString(),
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                      //todo enter points auto
                       Container(
-                        decoration: const BoxDecoration(
-                        color: Colors.cyanAccent,
-                          shape: BoxShape.circle
-                        ),
+                        decoration: BoxDecoration(
+                          image: (stoneFindBool==false)?DecorationImage(image: stoneModalList!.listImage[xIndex].imageFind!,fit: BoxFit.fill):null,
+                            color: Colors.cyanAccent,),
                         height: 150,
                         width: 150,
                         alignment: Alignment.center,
-                        child: (stoneFindBool==true)?const SizedBox(
-                          child: Text('?',style: TextStyle(color: Colors.red,fontSize: 50),),
-                        ):Container(),
+                        child: (stoneFindBool == true)
+                            ? const SizedBox(
+                                child: Text(
+                                  '?',
+                                  style: TextStyle(
+                                      color: Colors.red, fontSize: 100),
+                                ),
+                              )
+                            : Container(),
                       ),
                     ],
                   ),
                   Column(
                     children: [
-                      Text(textUserName.text,style: const TextStyle(fontSize: 30),),
-                      const Text('Point',style: TextStyle(fontSize: 20),),
+                      Text(
+                        textUserName.text,
+                        style: const TextStyle(fontSize: 30),
+                      ),
+                      Text(
+                        userPoint.toString(),
+                        style: const TextStyle(fontSize: 20),
+                      ),
                       Container(
-                        decoration: const BoxDecoration(
-                        color: Colors.cyanAccent,
-                          shape: BoxShape.circle,
+                        decoration: BoxDecoration(
+                          color: Colors.cyanAccent,
+                          image: (stoneFindBoolUser==false)?DecorationImage(image: stoneModalList!.listImage[selectIndexUser].imageFind!,fit: BoxFit.fill):null
                         ),
                         height: 150,
                         width: 150,
                         alignment: Alignment.center,
-                        child: (stoneFindBoolUser==true)?Container(
-                          child: Text('?',style: TextStyle(color: Colors.red,fontSize: 50),),
-                        ):Container(),
+                        child: (stoneFindBoolUser == true)
+                            ? Container(
+                                child: const Text(
+                                  '?',
+                                  style: TextStyle(
+                                      color: Colors.purpleAccent, fontSize: 100),
+                                ),
+                              )
+                            : Container(),
                       ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: height/4,),
+              SizedBox(
+                height: height / 4,
+              ),
               // ()?:,
-              (stoneFindBoolUser==true)?Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ...List.generate(stoneModalList!.listImage.length, (index) => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
+              (stoneFindBoolUser == true)
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ...List.generate(
+                          stoneModalList!.listImage.length,
+                          (index) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
 
-                        });
-                      },
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                        color: Colors.deepOrangeAccent,
-                          image: DecorationImage(
-                            image: stoneModalList!.listImage[index].imageFind!,
+                                  Random random = Random();
+                                  xIndex = random.nextInt(emptyStone.length);
+                                  print(xIndex);
+                                  stoneFindBoolUser = false;
+                                  selectIndexUser=index;
+                                  stoneFindBool=false;
+                                  stoneFuntion();
+                                });
+                              },
+                              child: Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  color: Colors.deepOrangeAccent,
+                                  image: DecorationImage(
+                                    image: stoneModalList!
+                                        .listImage[index].imageFind!,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 100,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: RadialGradient(
+                                  colors: [Colors.white, Colors.cyanAccent])),
+                          child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  stoneFindBoolUser = true;
+                                  stoneFindBool=true;
+                                });
+                              },
+                              child: const Text(
+                                'Continue',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 18),
+                              )),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: RadialGradient(
+                                  colors: [Colors.white, Colors.cyanAccent])),
+                          child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  stoneFindBoolUser = true;
+                                  stoneFindBool=true;
+                                  apiPoint=0;
+                                  userPoint=0;
+                                });
+                              },
+                              child: const Text(
+                                'Reset',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 18),
+                              )),
+                        )
+                      ],
                     ),
-                  ),),
-                ],
-              ):GestureDetector(
-                onTap: () {
-
-                },
-                  child: Container()
-              ),
             ],
           ),
         ),
@@ -125,3 +212,5 @@ class _StoneStartState extends State<StoneStart> {
     );
   }
 }
+
+int xIndex = 0;

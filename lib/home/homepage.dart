@@ -46,59 +46,61 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       // backgroundColor: const Color(0xff12154a),
-      body: Column(
-        children: [
-          Container(
-            height: 500,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: ox,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 500,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: ox,
+                ),
               ),
             ),
-          ),
-          Container(
-            height: 80,
-            width: 170,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.blue),
-              borderRadius: BorderRadius.circular(40),
-              // gradient: LinearGradient(
-              //   colors: [
-              //     Colors.deepPurpleAccent,
-              //     Colors.green,
-              //   ]
-              // ),
-
+            Container(
+              height: 80,
+              width: 170,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blue),
+                borderRadius: BorderRadius.circular(40),
+                // gradient: LinearGradient(
+                //   colors: [
+                //     Colors.deepPurpleAccent,
+                //     Colors.green,
+                //   ]
+                // ),
+        
+              ),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/play');
+                },
+                child: Image(image: play,),
+              ),
             ),
-            child: TextButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/play');
-              },
-              child: Image(image: play,),
+            SizedBox(height: 30,),
+            Container(
+              height: 80,
+              width: 170,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blue),
+                borderRadius: BorderRadius.circular(40),
+                // gradient: LinearGradient(
+                //   colors: [
+                //     Colors.deepPurpleAccent,
+                //     Colors.green,
+                //   ]
+                // ),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/play2');
+                },
+                child: Image(image: stoneModal!.listImage[2].imageFind!,),
+              ),
             ),
-          ),
-          SizedBox(height: 30,),
-          Container(
-            height: 80,
-            width: 170,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.blue),
-              borderRadius: BorderRadius.circular(40),
-              // gradient: LinearGradient(
-              //   colors: [
-              //     Colors.deepPurpleAccent,
-              //     Colors.green,
-              //   ]
-              // ),
-            ),
-            child: TextButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/play2');
-              },
-              child: Image(image: stoneModal!.listImage[2].imageFind!,),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
