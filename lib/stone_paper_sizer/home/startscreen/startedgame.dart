@@ -68,8 +68,14 @@ class _StoneStartState extends State<StoneStart> {
                       //todo enter points auto
                       Container(
                         decoration: BoxDecoration(
-                          image: (stoneFindBool==false)?DecorationImage(image: stoneModalList!.listImage[xIndex].imageFind!,fit: BoxFit.fill):null,
-                            color: Colors.cyanAccent,),
+                          image: (stoneFindBool == false)
+                              ? DecorationImage(
+                                  image: stoneModalList!
+                                      .listImage[xIndex].imageFind!,
+                                  fit: BoxFit.fill)
+                              : null,
+                          color: Colors.cyanAccent,
+                        ),
                         height: 150,
                         width: 150,
                         alignment: Alignment.center,
@@ -97,18 +103,23 @@ class _StoneStartState extends State<StoneStart> {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.cyanAccent,
-                          image: (stoneFindBoolUser==false)?DecorationImage(image: stoneModalList!.listImage[selectIndexUser].imageFind!,fit: BoxFit.fill):null
-                        ),
+                            color: Colors.cyanAccent,
+                            image: (stoneFindBoolUser == false)
+                                ? DecorationImage(
+                                    image: stoneModalList!
+                                        .listImage[selectIndexUser].imageFind!,
+                                    fit: BoxFit.fill)
+                                : null),
                         height: 150,
                         width: 150,
                         alignment: Alignment.center,
                         child: (stoneFindBoolUser == true)
-                            ? Container(
-                                child: const Text(
+                            ? const SizedBox(
+                                child: Text(
                                   '?',
                                   style: TextStyle(
-                                      color: Colors.purpleAccent, fontSize: 100),
+                                      color: Colors.purpleAccent,
+                                      fontSize: 100),
                                 ),
                               )
                             : Container(),
@@ -132,13 +143,12 @@ class _StoneStartState extends State<StoneStart> {
                             child: GestureDetector(
                               onTap: () {
                                 setState(() {
-
                                   Random random = Random();
                                   xIndex = random.nextInt(emptyStone.length);
-                                  print(xIndex);
+                                  // print(xIndex);
                                   stoneFindBoolUser = false;
-                                  selectIndexUser=index;
-                                  stoneFindBool=false;
+                                  selectIndexUser = index;
+                                  stoneFindBool = false;
                                   stoneFuntion();
                                 });
                               },
@@ -169,17 +179,19 @@ class _StoneStartState extends State<StoneStart> {
                               gradient: RadialGradient(
                                   colors: [Colors.white, Colors.cyanAccent])),
                           child: TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  stoneFindBoolUser = true;
-                                  stoneFindBool=true;
-                                });
-                              },
-                              child: const Text(
-                                'Continue',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 18),
-                              )),
+                            onPressed: () {
+                              setState(() {
+                                // print(dateTime.second);
+                                stoneFindBoolUser = true;
+                                stoneFindBool = true;
+                              });
+                            },
+                            child: const Text(
+                              'Continue',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                            ),
+                          ),
                         ),
                         Container(
                           height: 100,
@@ -192,9 +204,9 @@ class _StoneStartState extends State<StoneStart> {
                               onPressed: () {
                                 setState(() {
                                   stoneFindBoolUser = true;
-                                  stoneFindBool=true;
-                                  apiPoint=0;
-                                  userPoint=0;
+                                  stoneFindBool = true;
+                                  apiPoint = 0;
+                                  userPoint = 0;
                                 });
                               },
                               child: const Text(
@@ -214,3 +226,4 @@ class _StoneStartState extends State<StoneStart> {
 }
 
 int xIndex = 0;
+DateTime dateTime = DateTime.now();
