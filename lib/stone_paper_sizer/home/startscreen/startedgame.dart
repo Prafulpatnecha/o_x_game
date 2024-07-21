@@ -223,5 +223,6 @@ class _StoneStartState extends State<StoneStart> {
     );
   }
 }
+
 int xIndex = 0;
 // DateTime dateTime = DateTime.now();
