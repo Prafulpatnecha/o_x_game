@@ -27,15 +27,15 @@ class _StoneStartState extends State<StoneStart> {
           child: Column(
             children: [
               Container(
-                height: 100,
+                height: 80,
                 width: width,
-                color: Colors.cyanAccent,
+                // color: Colors.cyanAccent,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
                   child: Container(
                     // margin: EdgeInsets.only(top: 50),
                     width: width,
-                    color: Colors.cyan,
+                    // color: Colors.cyan,
                     child: Row(
                       children: [
                         IconButton(
@@ -57,42 +57,6 @@ class _StoneStartState extends State<StoneStart> {
                 children: [
                   Column(
                     children: [
-                      const Text(
-                        'API',
-                        style: TextStyle(fontSize: 30),
-                      ),
-                      Text(
-                        apiPoint.toString(),
-                        style: const TextStyle(fontSize: 20),
-                      ),
-                      //todo enter points auto
-                      Container(
-                        decoration: BoxDecoration(
-                          image: (stoneFindBool == false)
-                              ? DecorationImage(
-                                  image: stoneModalList!
-                                      .listImage[xIndex].imageFind!,
-                                  fit: BoxFit.fill)
-                              : null,
-                          color: Colors.cyanAccent,
-                        ),
-                        height: 150,
-                        width: 150,
-                        alignment: Alignment.center,
-                        child: (stoneFindBool == true)
-                            ? const SizedBox(
-                                child: Text(
-                                  '?',
-                                  style: TextStyle(
-                                      color: Colors.red, fontSize: 100),
-                                ),
-                              )
-                            : Container(),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
                       Text(
                         textUserName.text,
                         style: const TextStyle(fontSize: 30),
@@ -108,7 +72,7 @@ class _StoneStartState extends State<StoneStart> {
                                 ? DecorationImage(
                                     image: stoneModalList!
                                         .listImage[selectIndexUser].imageFind!,
-                                    fit: BoxFit.fill)
+                                    fit: BoxFit.scaleDown)
                                 : null),
                         height: 150,
                         width: 150,
@@ -122,6 +86,42 @@ class _StoneStartState extends State<StoneStart> {
                                       fontSize: 100),
                                 ),
                               )
+                            : Container(),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      const Text(
+                        'Ai',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                      Text(
+                        apiPoint.toString(),
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                      //todo enter points auto
+                      Container(
+                        decoration: BoxDecoration(
+                          image: (stoneFindBool == false)
+                              ? DecorationImage(
+                              image: stoneModalList!
+                                  .listImage[xIndex].imageFind!,
+                              fit: BoxFit.scaleDown)
+                              : null,
+                          color: Colors.cyanAccent,
+                        ),
+                        height: 150,
+                        width: 150,
+                        alignment: Alignment.center,
+                        child: (stoneFindBool == true)
+                            ? const SizedBox(
+                          child: Text(
+                            '?',
+                            style: TextStyle(
+                                color: Colors.red, fontSize: 100),
+                          ),
+                        )
                             : Container(),
                       ),
                     ],
@@ -181,7 +181,6 @@ class _StoneStartState extends State<StoneStart> {
                           child: TextButton(
                             onPressed: () {
                               setState(() {
-                                // print(dateTime.second);
                                 stoneFindBoolUser = true;
                                 stoneFindBool = true;
                               });
@@ -224,6 +223,5 @@ class _StoneStartState extends State<StoneStart> {
     );
   }
 }
-
 int xIndex = 0;
-DateTime dateTime = DateTime.now();
+// DateTime dateTime = DateTime.now();
